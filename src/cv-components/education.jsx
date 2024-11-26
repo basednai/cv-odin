@@ -9,6 +9,7 @@ function EducationEntry({ count, edit }) {
   const [gpa, setGPA] = useState("");
   const [country, setCountry] = useState("");
 
+
   return (
     <>
       <div className="educationEntry" id={"educationEntry" + count}>
@@ -119,7 +120,7 @@ function EducationEntry({ count, edit }) {
 
 function Education() {
   const [edit, setEdit] = useState(true);
-  const [educationList, setExperienceList] = useState([education]);
+  const [educationList, setEducationList] = useState([education]);
   const [keyId, setKey] = useState(1);
 
   function formSubmit(event) {
@@ -132,12 +133,13 @@ function Education() {
     const newEducation = { ...education };
     newEducation["id"] = keyId;
     setKey(keyId + 1);
-    setExperienceList([...educationList, newEducation]);
+    setEducationList([...educationList, newEducation]);
+    console.log("add", educationList);
 
   }
 
   function removeEducation() {
-    setExperienceList([...educationList.slice(1, educationList.length)]);
+    setEducationList([...educationList.slice(0, -1)]);
   }
 
   return (

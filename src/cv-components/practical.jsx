@@ -193,7 +193,7 @@ function Experience() {
   }
 
   function removeEducation() {
-    setExperienceList([...experienceList.slice(1, experienceList.length)]);
+    setExperienceList([...experienceList.slice(0, -1)]);
   }
 
   return (
